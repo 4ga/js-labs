@@ -10,7 +10,7 @@ import {
 
 describe("string utils", () => {
   describe("capitalize", () => {
-    it("throws for non-string input", () => {
+    it("capitalize throws for non-string input", () => {
       expect(() => capitalize(123)).toThrow("Input must be a string");
     });
 
@@ -28,7 +28,7 @@ describe("string utils", () => {
   });
 
   describe("toCamelCase", () => {
-    it("throws for non-string input", () => {
+    it("camelCase throws for non-string input", () => {
       expect(() => toCamelCase(123)).toThrow("Input must be a string");
     });
 
@@ -46,7 +46,7 @@ describe("string utils", () => {
   });
 
   describe("toSnakeCase", () => {
-    it("throws for non-string input", () => {
+    it("snake case throws for non-string input", () => {
       expect(() => toSnakeCase(123)).toThrow("Input must be a string");
     });
 
@@ -78,7 +78,7 @@ describe("string utils", () => {
   });
 
   describe("trimExtraSpaces", () => {
-    it("throws for non-string input", () => {
+    it("trims throws for non-string input", () => {
       expect(() => trimExtraSpaces(123)).toThrow("Input must be a string");
     });
 
