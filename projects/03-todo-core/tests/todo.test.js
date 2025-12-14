@@ -91,4 +91,24 @@ describe("todo core", () => {
       expect(updatedTodos).toBe(todos);
     });
   });
+
+  it("does not mutate the original todo object when toggling", () => {
+    const original = createTodo("Task");
+    const todos = [original];
+
+    const updatedTodos = toggleTodoCompleted(todos, original.id);
+
+    expect(updatedTodos[0]).not.toBe(original); // new object
+    expect(todos[0]).toBe(original); // original unchanged in array
+  });
+
+  it("returns a new array instance when a todo is removed", () => {
+    const t1 = createTodo("Task 1");
+    const t2 = createTodo("Task 2");
+    const todos = [t1, t2];
+
+    const updatedTodos = removeTodo(todos, t1.id);
+
+    expect(updatedTodos).not.toBe(todos);
+  });
 });

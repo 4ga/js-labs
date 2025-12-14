@@ -19,12 +19,11 @@ export function createTodo(title) {
   return todo;
 }
 export function toggleTodoCompleted(todos, id) {
-  const now = new Date();
   const todo = todos.find((t) => t.id === id);
   if (!todo) return todos;
   return todos.map((todo) =>
     todo.id === id
-      ? { ...todo, completed: !todo.completed, updatedAt: now }
+      ? { ...todo, completed: !todo.completed, updatedAt: new Date() }
       : todo
   );
 }
